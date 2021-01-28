@@ -139,7 +139,8 @@ proxies:
 - {name: GCP-trojan-twv1, server: twv1.800henryho.ga, port: 443, type: trojan, password: henryho, sni: twv1.800henryho.ga, skip-cert-verify: false, udp: true}
 - {name: GCP-Vmess-HKv1, server: 35.241.111.49, port: 39547, type: vmess, uuid: a9ddff0a-a25d-407b-9ca5-c34165baf842, alterId: 3, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
 - {name: GCP-Vmess-HKv2, server: 34.96.180.37, port: 39547, type: vmess, uuid: 778dda8d-76a7-484e-b6e7-630aa6b0abc0, alterId: 3, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-- {name: GCP-Vmess-TW, server: 104.199.197.38, port: 39547, type: vmess, uuid: a8bd7658-f1de-4cdb-ac12-733c9a085487, alterId: 3, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+- {name: GCP-Vmess-TWv1, server: 104.199.197.38, port: 39547, type: vmess, uuid: a8bd7658-f1de-4cdb-ac12-733c9a085487, alterId: 3, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+- {name: GCP-Vmess-TWv2, server: 35.229.181.68, port: 39547, type: vmess, uuid: 718eb107-c471-4bec-9a11-a98d9e168c8a, alterId: 3, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
@@ -155,7 +156,8 @@ proxy-groups:
       - GCP-trojan-twv1
       - GCP-Vmess-HKv1
       - GCP-Vmess-HKv2
-      - GCP-Vmess-TW
+      - GCP-Vmess-TWv1
+      - GCP-Vmess-TWv2
       - HerokuCF-hheu1
       - HerokuCF-hhus1
       - HerokuCF-hhus2
@@ -177,7 +179,8 @@ proxy-groups:
       - GCP-trojan-twv1
       - GCP-Vmess-HKv1
       - GCP-Vmess-HKv2
-      - GCP-Vmess-TW
+      - GCP-Vmess-TWv1
+      - GCP-Vmess-TWv2
   - name: 🔯 故障转移
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -191,7 +194,8 @@ proxy-groups:
       - GCP-trojan-twv1
       - GCP-Vmess-HKv1
       - GCP-Vmess-HKv2
-      - GCP-Vmess-TW
+      - GCP-Vmess-TWv1
+      - GCP-Vmess-TWv2
   - name: 🔮 负载均衡
     type: load-balance
     url: http://www.gstatic.com/generate_204
@@ -218,7 +222,8 @@ proxy-groups:
       - 🚀 节点选择
       - GCP-Vmess-HKv1
       - GCP-Vmess-HKv2
-      - GCP-Vmess-TW
+      - GCP-Vmess-TWv1
+      - GCP-Vmess-TWv2
       - GCP-JPv2ray
   - name: 🛑 全球拦截
     type: select
