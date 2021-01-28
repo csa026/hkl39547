@@ -228,6 +228,7 @@ proxy-groups:
       - 🔯 故障转移
       - 🔮 负载均衡
 rules:
+- DOMAIN-SUFFIX,cloud.google.com,🚀 节点选择
 - DOMAIN-KEYWORD,googleapis,VmessSingle
 - DOMAIN-SUFFIX,lra8j.com,VmessSingle
 - DOMAIN-SUFFIX,tvb.com,VmessSingle
