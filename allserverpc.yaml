@@ -5,10 +5,6 @@ bind-address: "*"
 ipv6: false
 mode: rule
 log-level: silent
-external-controller: 0.0.0.0:9090
-redir-port: 7892
-secret: "123456"
-external-ui: "/usr/share/openclash/dashboard"
 dns:
   listen: 127.0.0.1:7874
   enable: true
@@ -93,16 +89,11 @@ dns:
     - 119.28.28.28
     - 223.5.5.5
     - 180.76.76.76
-    - https://doh.rixcloud.dev/dns-query
   fallback:
     - https://cloudflare-dns.com/dns-query
     - https://dns.google/dns-query
     - https://dns.quad9.net/dns-query
-    - tls://dns.google:853
     - https://1.1.1.1/dns-query
-    - tls://1.1.1.1:853
-    - tls://8.8.8.8:853
-    - tls://149.112.112.112:853
   fallback-filter:
     geoip: true
     ipcidr:
@@ -195,7 +186,7 @@ proxy-groups:
   - name: 🔮 负载均衡
     type: load-balance
     url: http://www.gstatic.com/generate_204
-    interval: 60
+    interval: 120
     proxies:
       - HerokuCF-hheu1
       - HerokuCF-hhus1
