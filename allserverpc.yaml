@@ -6,10 +6,10 @@ ipv6: false
 mode: rule
 log-level: silent
 dns:
-  listen: 127.0.0.1:7874
+  listen: 0.0.0.0:53
   enable: true
   ipv6: false
-  enhanced-mode: fake-ip
+  enhanced-mode: redir-host
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
 ##Custom fake-ip-filter##
@@ -94,6 +94,9 @@ dns:
     - https://dns.google/dns-query
     - https://dns.quad9.net/dns-query
     - https://1.1.1.1/dns-query
+    - https://doh.pub/dns-query
+    - tls://xingnian.d.rubyfish.cn:853
+    - tls://dns.alidns.com:853
   fallback-filter:
     geoip: true
     ipcidr:
@@ -186,7 +189,7 @@ proxy-groups:
   - name: 🔮 负载均衡
     type: load-balance
     url: http://www.gstatic.com/generate_204
-    interval: 120
+    interval: 60
     proxies:
       - HerokuCF-hheu1
       - HerokuCF-hhus1
