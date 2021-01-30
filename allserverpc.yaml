@@ -162,8 +162,8 @@ proxy-groups:
       - Heroku-hhus3
   - name: ♻️ 自动选择
     type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 60
+    url: http://g.cn/generate_204
+    interval: 180
     proxies:
       - 🔮 负载均衡
       - GCP-JPv2ray
@@ -175,9 +175,10 @@ proxy-groups:
       - GCP-Vmess-HKv2
       - GCP-Vmess-TWv1
       - GCP-Vmess-TWv2
+      - 🔯 故障转移
   - name: 🔯 故障转移
     type: fallback
-    url: http://www.gstatic.com/generate_204
+    url: http://g.cn/generate_204
     interval: 120
     proxies:
       - 🔮 负载均衡
@@ -192,8 +193,8 @@ proxy-groups:
       - GCP-Vmess-TWv2
   - name: 🔮 负载均衡
     type: load-balance
-    url: http://www.gstatic.com/generate_204
-    interval: 60
+    url: http://g.cn/generate_204
+    interval: 120
     proxies:
       - HerokuCF-hheu1
       - HerokuCF-hhus1
